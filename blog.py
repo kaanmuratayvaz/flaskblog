@@ -1,5 +1,4 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request, jsonify
-from flask_mysqldb import MySQL
 from passlib.hash import sha256_crypt
 from flask_pymongo import PyMongo
 from functools import wraps
