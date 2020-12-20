@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Makale Ekleme</h3>
+<hr>
+<form method="POST" action="{{url_for('addarticle')}}" enctype="multipart/form-data">
+    <section class="editor">
+        <div class="container  text-center">
+            <h2>Yazı Ekleme</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Yazı Başlığı</span>
+                        <input type="text" class="form-control" required="" name="yazi_baslik" placeholder="BAŞLIK"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="yazi_resimyol" id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Yazı Görseli</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Kategori Seç</span>
+                            <select name="kategori_id" class="select2_multiple form-control" name="kategori_id">
+                                <option value="yazılım">Yazılım</option>
+                                <option value="gelisim">Gelişim</option>
+                                <option value="okul">Okul</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea {!!type="text" !!} name="yazi_icerik" id="content"></textarea>
+                </div>
+
+                <button type="submit" name="yaziekle" class="btn btn-primary"> <input type="hidden" name="kullanici_id"
+                        value="">Yazı Ekle</button>
+            </div>
+
+        </div>
+    </section>
+</form>
+
+{% endblock %}

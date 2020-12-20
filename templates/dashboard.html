@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block body %}
+<div style="min-height:700px;">
+
+<h3>Kontrol Paneli</h3>
+<small>Hoşgeldin, {{ session['username'] }}</small>
+<hr>
+
+<a href="/addarticle" class="btn btn-success">Makale Ekle</a>
+<a href="/article" class="btn btn-success">Makaleler</a>
+
+<hr>
+<h2>Makalelerim</h2>
+
+{% if output %}
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Sıra</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Kategori</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for x in output %}
+
+        <tr>
+            <td scope="row">1</td>
+            <td><a href="/article/{{x._id}}">{{ x.baslik }} </a></td>
+            <td>{{ x.time }}</td>
+            <td>{{ x.kategori }}</td>
+            <td><a href="/makaleguncelle/{{x._id}}"> <button type="button" class="btn btn-success">Güncelle</button> </a> </td>
+            <td><a href="/delete/{{x._id}}"> <button type="button" class="btn btn-danger">Sil</button></a> </td>
+        </tr>
+        {% endfor %}
+
+        <!-- <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger">Kayıtlı makale bulunmuyor!</div>
+
+{% endif %}
+
+
+
+</div>
+
+{% endblock %}

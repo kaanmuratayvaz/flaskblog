@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<section id="Kheader">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-1"
+                    src="https://images.unsplash.com/photo-1510511498717-4326639c999c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    style=" height:450px;" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="button-alan">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt-2">
+
+                <a href="#"><button type="button" class="btn btn-outline-secondary me-2 mt-2">Tümü</button></a>
+                <a href="#"><button type="button" class="btn btn-outline-secondary me-2 mt-2">Girişimcilik</button></a>
+                <a href="#"><button type="button" class="btn btn-outline-secondary me-2 mt-2">Okul</button></a>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-alan">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-around flex-wrap col-md-12">
+
+                {% if output %}
+                {% for x in output %}
+                <div class="card mt-4">
+                    <img src="https://images.unsplash.com/photo-1576936422505-18d321d54d40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            {{x.baslik}}
+                        </h5>
+                        <p class="card-text">{{x.tanitim|safe}}</p>
+                        <a href="/article/{{x._id}}" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="alert alert-danger">Kayıtlı makale bulunmuyor!</div>
+                {% endif %}
+
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #004385, #1f90ff);
+    color: white;
+}
+
+.navbar .fab {
+    color: white;
+    font-size: 40px;
+}
+
+.navbar-nav li a {
+    color: #fff !important;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.btn a {
+    text-decoration: none !important;
+    color: white;
+}
+
+#Kheader .container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.img-1 {
+    width: 100%;
+}
+
+.btn {
+    border-radius: 30px !important;
+}
+
+.card {
+    width: 300px;
+    border-radius: 50px !important;
+}
+
+.card img {
+    border-top-left-radius: 50px;
+}
+
+.footer-1 {
+    background-image: linear-gradient(to right, #004385, #1f90ff);
+    color: white;
+}
+
+.footer-1 ul {
+    list-style: none;
+}
+
+.f-logo .fab {
+    font-size: 100px;
+}
+
+.social .fab {
+    font-size: 30px;
+}
+
+.table a{
+    text-decoration: none !important;
+}

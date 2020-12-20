@@ -1,0 +1,33 @@
+{% extends "layout.html" %} 
+
+
+{% block body %}
+<form action="{{url_for('login')}}" method="POST">
+    <section class="login">
+        <div class="container">
+            <div class="row text-center">
+                <p class="mt-4">Yönetim Paneli</p>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="card mb-4" style="width: 400px;">
+                        <img src="https://images.unsplash.com/photo-1602526215099-19d4d14797d6?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="input-group flex-nowrap mt-4">
+                                <span class="input-group-text" id="addon-wrapping">Kullanıcı Adı: </span>
+                                <input type="text" name="username" class="form-control" required="" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                            <div class="input-group flex-nowrap mt-4">
+                                <span class="input-group-text" id="addon-wrapping">Şifre:</span>
+                                <input type="password" name="password" class="form-control" required="" placeholder="" aria-label="password" aria-describedby="addon-wrapping">
+                            </div>
+                            <button type="submit" name="kullanicigiris" class="btn btn-success mt-4">Giriş Yap</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+
+
+{% endblock %}

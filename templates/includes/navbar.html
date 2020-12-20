@@ -1,0 +1,46 @@
+<section id="Knavbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="/"><i class="fab fa-aviato"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">Biyografi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+
+
+                </ul>
+                <form method="POST" class="d-flex justify-content-end" action="{{url_for('search')}}">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="btn btn-success ms-2" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                {% if session['loggin_in'] %}
+                <a href="/dashboard">
+                    <button type="button" class="btn btn-success ms-2">KontrolPaneli</button>
+                </a>
+                <a href="/logout">
+                    <button type="button" class="btn btn-danger ms-2">ÇıkışYap</button>
+                </a>
+
+                {% else %}
+                <a href="/login"><button type="button" class="btn btn-success ms-2">GirişYap</button></a>
+                <a href="/register"><button type="button" class="btn btn-danger ms-2">KayıtOl</button></a>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</section>
